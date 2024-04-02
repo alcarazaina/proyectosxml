@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <!-- los dos enumerados los pongo aquí arriba y los declaro como un tipo de dato-->
+<xs:simpleType name="nombre_incidencia">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="frio"/>
+        <xs:enumeration value="nieve"/>
+        <xs:enumeration value="lluvia"/>
+        <xs:enumeration value="calor"/>
+    </xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="severidad">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="alta"/>
+        <xs:enumeration value="media"/>
+        <xs:enumeration value="baja"/>
+    </xs:restriction>
+</xs:simpleType>
+ <!-- y aquí empieza ya el elemento raiz-->
+    <xs:element name="registro-temperatura">
+    <xs:complexType>
+        <xs:sequence>
+
+
+        
+            <!-- La fecha de registro debe ser una fecha válida-->
+            <!-- Temperatura mínima >= -50 -->
+            <!-- Temperatura máxima <= 50 -->
+            <!-- El numero de incidencias no tiene limite-->
+        </xs:sequence>
+    </xs:complexType>    
+    </xs:element>
+</xs:schema>

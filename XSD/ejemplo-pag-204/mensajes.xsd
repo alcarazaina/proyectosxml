@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> <!--Declaración XML-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> <!--Se pone así siempre y es el elemento raíz del xsd-->
+    <xs:element name="mensajes"> <!--El elemento raíz del xml-->
+        <xs:complexType>
+            <xs:sequence> <!--Concretamente de la secuencia de elementos: de, para, mensaje-->
+                <xs:element name="de" type="xs:string"/> <!--Cada elemento con su nombre y su tipo-->
+                <xs:element name="para" type="xs:string"/>
+                <xs:element name="mensaje" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

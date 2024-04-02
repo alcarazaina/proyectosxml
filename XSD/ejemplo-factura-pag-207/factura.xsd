@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="factura">
+        <!-- tenemos que añadir: -->
+     
+        <xs:complexType>
+            <xs:sequence>
+        <!-- numero - simple-->
+                <xs:element name= "numero" type="xs:integer"/>
+        <!-- cliente - complejo: contiene nombre y cif, que son simpleas-->
+        <xs:element name="cliente">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="nombre" type="xs:string"/>
+                    <xs:element name="CIF"> <!-- no ponemos el tipo de dato porque añadimos la extensión de número de caracteres; lo trasladamos a xs:restriction base-->
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:length value="9"></xs:length>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- concepto - complejo: descripción e importe (simples) y a demás aparece dos veces -->
+        <xs:element name="concepto" minOccurs="1" maxOccurs="unbounded"><!-- si no ponemos que aparece más de una vez, no valida: se hace poniendo el mínimo de ocurrencias y el máximo de ocurrencias del elemento, asi ponemos unbounded cuando no queremos poner limite superior-->
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="descripcion" type="xs:string"/>
+                    <xs:element name="importe" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <!-- impuesto- complejo (tiene un atributo yb contenido de texto-> mixto)-->
+        <xs:element name="impuesto">
+            <xs:complexType mixed="true"> <!-- Aqui es donde ponemos lo del contenido mixto-->
+                <xs:attribute name="nombre" type="xs:string"/>
+            </xs:complexType>
+        </xs:element>
+        <!-- totalFactura: es complejo porque tiene un atributo y un elemento vacío-->
+        <xs:element name="totalFactura">
+            <xs:complexType>
+                <xs:attribute name="euros" type="xs:double"/>
+            </xs:complexType>
+        </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+       
+    </xs:element>
+</xs:schema>
