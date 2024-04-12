@@ -11,8 +11,8 @@
                             <xs:element name="numero">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:integer">
-                                        <xs:minInclusive value="0"/>
-                                        <xs:maxInclusive value="500"></xs:maxInclusive>
+                                        <xs:minExclusive value="0"/>
+                                        <xs:maxInclusive value="500"/>
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
@@ -26,7 +26,7 @@
             <xs:attribute name="dni">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
-                        <xs:pattern value="[0-9]{8}[A-Z]"/>
+                        <xs:pattern value="\d{8}[A-Z]"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
