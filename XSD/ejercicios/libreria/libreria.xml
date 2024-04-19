@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<?xml-model href="libreria.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <libreria>
   <codigo>1263</codigo>
   <direccion>Juan de Juni, 31</direccion>
@@ -12,6 +13,6 @@
     <autor>Gabriel García Márquez</autor>
     <formato>Rústica</formato>
     <publicacion>1967</publicacion>
-    <precio>23,5</precio>
+    <precio>23.5</precio>
   </libro>
 </libreria>
