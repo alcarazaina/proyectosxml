@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="heladeria">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="helado" maxOccurs="unbounded">
+                    <xs:complexType>
+                         <xs:sequence>
+                            <xs:choice>
+                              <xs:element name="fresa"/>
+                               <xs:element name="vainilla"/>
+                            </xs:choice>
+                            <xs:element name="chocolate"/>
+                         </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
 <!-- El helado sólo puede ser de fresa y chocolate, o bien, de vainilla y chocolate.
 Los sabores serán elementos vacíos.-->
